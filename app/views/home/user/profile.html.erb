@@ -1,0 +1,35 @@
+
+<div class="breadscrumb">
+    <div class="row">
+		
+		<div class="col-md-2">
+		ddd
+		</div>
+		<div class="col-md-10">
+
+
+		<%= form_for(@current_user) do |f| %>
+		<table class="tblForm table-bordered table-striped" width="100%">
+			<tbody>
+				<tr>
+                	<th width="30%">Username *</th>
+                	<td width="70%"><p><%= f.text_field :username %></p></td>
+            	</tr>
+            	<tr>
+                	<th width="30%">Name: </th>
+                	<td width="70%"><p><%= f.text_field :name %></p></td>
+            	</tr>
+            	<tr>
+                	<th width="30%">Email: </th>
+                	<td width="70%"><p><%= f.text_field :username %></p></td>
+            	</tr>
+            	<tr>
+                	<th width="30%"></th>
+                	<td width="70%"><p><%= f.submit :Save, class: 'btn btn-primary' %></p></td>
+            	</tr>
+			</tbody>
+		</table>
+		<% end %>
+		</div>
+    </div>
+</div>

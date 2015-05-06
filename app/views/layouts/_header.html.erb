@@ -39,13 +39,13 @@
 
 				<a href="#" class="dropdown-toggle" aria-expanded="true" role="button" data-toggle="dropdown">
 					<p class="top_left"></p>
-					<p class="top_center"> <%= Menuname.find_by(id: id.to_s.to_i).name  %> </p>
+					<p class="top_center"> <%= id %> </p>
 					<p class="top_right"></p>
 					<div class="cl"></div>
 				</a>
 				<ul class="dropdown-menu" style="z-index:2;">
 					<% data.each do |d| %>
-					<li><a href="/<%= d[:controllers] + '/' + d[:action] %>">
+					<li><a href="/admin/<%= d[:controller] + '/' + d[:action] %>">
 						<p> <%= d[:name] %> </p>
 					</a>
 				</li>

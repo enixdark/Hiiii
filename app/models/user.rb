@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
     before_save :email_downcase, :hash_password
 
-	attr_accessor :password_confirmation, :signin, :remember_token
+	  attr_accessor :password_confirmation, :signin, :remember_token
 
     validates :username,  presence: true, length: { maximum: 50 }
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -58,7 +58,7 @@ class User < ActiveRecord::Base
       end
 	  def hash_password
 	    if self.password_digest != self.password
-	      self.password = self.digest self.password
+	      self.password = User.digest self.password
 	      self.password_digest = self.password
 	    end
 	  end

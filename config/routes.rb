@@ -4,10 +4,20 @@ Rails.application.routes.draw do
   resources :menus
   resources :users
 
-  root :to => 'home#index'
+  get '/' => redirect('/admin')
+  # root :to => redirect('/admin')
+  
   get    'user/login'   => 'sessions#new'
   post   'user/login'   => 'sessions#create'
   delete 'user/logout'  => 'sessions#destroy'
+
+  scope '/admin' do
+    root :to => 'home#index'
+    get 'admin/user/profile' => 'user#'
+  end
+  # namespace :admin do
+
+  # end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
