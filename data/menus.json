@@ -1,0 +1,287 @@
+{
+    "Audit": [
+        {
+            "controllers": "farmer_audits", 
+            "action": "index/", 
+            "display_order": 1, 
+            "name": "My farmer audits", 
+            "parent_id": 6
+        }, 
+        {
+            "controllers": "farmer_audits", 
+            "action": "add/", 
+            "display_order": 2, 
+            "name": "Add farmer pre-audit", 
+            "parent_id": 6
+        }, 
+        {
+            "controllers": "farmer_audits", 
+            "action": "add/?type=request", 
+            "display_order": 3, 
+            "name": "Request farmer audit", 
+            "parent_id": 6
+        }, 
+        {
+            "controllers": "supplier_audits", 
+            "action": "index/", 
+            "display_order": 4, 
+            "name": "My supplier audits", 
+            "parent_id": 6
+        }, 
+        {
+            "controllers": "supplier_audits", 
+            "action": "add/", 
+            "display_order": 5, 
+            "name": "Add supplier pre-audit", 
+            "parent_id": 6
+        }, 
+        {
+            "controllers": "supplier_audits", 
+            "action": "add?type=request/", 
+            "display_order": 6, 
+            "name": "Request supplier audit", 
+            "parent_id": 6
+        }
+    ], 
+    "Planting": [
+        {
+            "controllers": "farmer_products", 
+            "action": "index/", 
+            "display_order": 1, 
+            "name": "My planted products", 
+            "parent_id": 3
+        }, 
+        {
+            "controllers": "farmer_products", 
+            "action": "add/", 
+            "display_order": 2, 
+            "name": "Add product planted", 
+            "parent_id": 3
+        }
+    ], 
+    "Training": [
+        {
+            "controllers": "trainings", 
+            "action": "farmer/", 
+            "display_order": 1, 
+            "name": "My farmer trainings", 
+            "parent_id": 5
+        }, 
+        {
+            "controllers": "trainings", 
+            "action": "farmer_add/", 
+            "display_order": 2, 
+            "name": "Add farmer training", 
+            "parent_id": 5
+        }, 
+        {
+            "controllers": "trainings", 
+            "action": "supplier/", 
+            "display_order": 3, 
+            "name": "My supplier trainings", 
+            "parent_id": 5
+        }, 
+        {
+            "controllers": "trainings", 
+            "action": "supplier_add/", 
+            "display_order": 4, 
+            "name": "Add supplier training", 
+            "parent_id": 5
+        }
+    ], 
+    "Certification": [
+        {
+            "controllers": "farmer_certifications", 
+            "action": "index/", 
+            "display_order": 1, 
+            "name": "My farmer certifications", 
+            "parent_id": 7
+        }, 
+        {
+            "controllers": "farmer_certifications", 
+            "action": "add_amendment/", 
+            "display_order": 2, 
+            "name": "Request farmer amendment", 
+            "parent_id": 7
+        }, 
+        {
+            "controllers": "supplier_certifications", 
+            "action": "index/", 
+            "display_order": 3, 
+            "name": "My supplier certifications", 
+            "parent_id": 7
+        }, 
+        {
+            "controllers": "supplier_certifications", 
+            "action": "add_amendment/", 
+            "display_order": 4, 
+            "name": "Request supplier amendment", 
+            "parent_id": 7
+        }
+    ], 
+    "Helpdesk": [
+        {
+            "controllers": "helpdesks", 
+            "action": "list?action=crop_problems/", 
+            "display_order": 1, 
+            "name": "Crop problem matrix", 
+            "parent_id": 9
+        }, 
+        {
+            "controllers": "articles", 
+            "action": "list/", 
+            "display_order": 2, 
+            "name": "Library", 
+            "parent_id": 9
+        }, 
+        {
+            "controllers": "products", 
+            "action": "index/", 
+            "display_order": 3, 
+            "name": "Products", 
+            "parent_id": 9
+        }, 
+        {
+            "controllers": "helpdesks", 
+            "action": "index/", 
+            "display_order": 4, 
+            "name": "Crop problems ", 
+            "parent_id": 9
+        }, 
+        {
+            "controllers": "trade_names", 
+            "action": "search/", 
+            "display_order": 5, 
+            "name": "Trade names", 
+            "parent_id": 9
+        }, 
+        {
+            "controllers": "active_ingredients", 
+            "action": "search/", 
+            "display_order": 6, 
+            "name": "Active ingredients", 
+            "parent_id": 9
+        }, 
+        {
+            "controllers": "helpdesks", 
+            "action": "image_gallery/", 
+            "display_order": 7, 
+            "name": "Image gallery", 
+            "parent_id": 9
+        }
+    ], 
+    "Account": [
+        {
+            "controllers": "users", 
+            "action": "profile/", 
+            "display_order": 1, 
+            "name": "Profile", 
+            "parent_id": 8
+        }, 
+        {
+            "controllers": "users", 
+            "action": "profile_password/", 
+            "display_order": 2, 
+            "name": "Change Password", 
+            "parent_id": 8
+        }
+    ], 
+    "Dashboard": [
+        {
+            "controllers": "users", 
+            "action": "dashboard/", 
+            "display_order": 1, 
+            "name": "Dashboard", 
+            "parent_id": 1
+        }
+    ], 
+    "Registration": [
+        {
+            "controllers": "farmers", 
+            "action": "index/", 
+            "display_order": 1, 
+            "name": "My farmer registrations", 
+            "parent_id": 2
+        }, 
+        {
+            "controllers": "farmers", 
+            "action": "add/", 
+            "display_order": 2, 
+            "name": "Register new farmer", 
+            "parent_id": 2
+        }, 
+        {
+            "controllers": "suppliers", 
+            "action": "index/", 
+            "display_order": 3, 
+            "name": "My supplier registrations", 
+            "parent_id": 2
+        }, 
+        {
+            "controllers": "suppliers", 
+            "action": "add/", 
+            "display_order": 4, 
+            "name": "Register new supplier", 
+            "parent_id": 2
+        }
+    ], 
+    "Inspection": [
+        {
+            "controllers": "farmers", 
+            "action": "lastest_inspection/", 
+            "display_order": 1, 
+            "name": "My latest farmer inspections", 
+            "parent_id": 4
+        }, 
+        {
+            "controllers": "farmer_field_inspections", 
+            "action": "index/", 
+            "display_order": 2, 
+            "name": "My farmer inspections", 
+            "parent_id": 4
+        }, 
+        {
+            "controllers": "farmer_field_inspections", 
+            "action": "add/", 
+            "display_order": 3, 
+            "name": "Add farmer inspection", 
+            "parent_id": 4
+        }, 
+        {
+            "controllers": "farmer_monitorings", 
+            "action": "index/", 
+            "display_order": 4, 
+            "name": "My farmer laboratory analyses", 
+            "parent_id": 4
+        }, 
+        {
+            "controllers": "suppliers", 
+            "action": "lastest_inspection/", 
+            "display_order": 5, 
+            "name": "My latest supplier inspections", 
+            "parent_id": 4
+        }, 
+        {
+            "controllers": "supplier_field_inspections", 
+            "action": "index/", 
+            "display_order": 6, 
+            "name": "My supplier inspections", 
+            "parent_id": 4
+        }, 
+        {
+            "controllers": "supplier_field_inspections", 
+            "action": "add/", 
+            "display_order": 7, 
+            "name": "Add supplier inspection", 
+            "parent_id": 4
+        }, 
+        {
+            "controllers": "supplier_monitorings", 
+            "action": "index/", 
+            "display_order": 8, 
+            "name": "My supplier laboratory analyses", 
+            "parent_id": 4
+        }
+        
+    ]
+}

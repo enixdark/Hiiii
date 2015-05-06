@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row vertical-align centering">
+
+    <div class="col-md-6 col-md-offset-3">
+      
+      <div id="main">
+        <%= image_tag 'logo.png' %>
+        <div class="full_w">
+        <%= form_for(:session, url: user_login_path) do |f| %>
+        <%= notice %>
+        <%= alert %>
+        <div class="field">
+          <%= f.label :signin %>
+          <%= f.text_field :signin, :autofocus => true, class: 'text' %> 
+          <label for="UserUsername"></label>
+        </div>
+        <div class="field">
+          <%= f.label :password %>
+          <%= f.password_field :password, autocomplete: "off",  class: 'text' %>
+          <label for="UserPassword"></label>
+        </div>
+
+
+        
+
+        <div class="sep"></div>
+        <div class="actions">
+          <%= f.submit "Log in", class: 'ok' %>
+        </div>
+
+        <% end %>
+
+              
+        </div>
+        <!-- <div style="text-align: center;" class="noprint" id="footer">
+          FRESH STUDIO &copy;2013
+        </div>   -->
+        
+
+        
+
+    </div>
+    <div style="text-align: center;" class="noprint" id="footer">
+          FRESH STUDIO &copy;2013
+        </div>  
+
+  </div>
+</div>

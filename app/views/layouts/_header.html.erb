@@ -1,0 +1,65 @@
+<div class="row">
+<div class="col-xs-6 col-md-6">
+<div class="fl">
+        <img alt="" style="float:left;" src="/assets/logo.png">
+        <form role="form" accept-charset="utf-8" method="post" id="ArticleListForm" style="margin: 30px 0 0 105px;" action="/admin/articles/list"><div style="display:none;">
+
+        <input class="search_border form-control" type="hidden" value="POST" name="_method">
+        </div>            
+
+        <input class="search_border form-control" type="text" value="" placeholder="Search the library" size="36" class="search_border" name="keyword">
+        <input class="form-control" type="submit" name="btnSearchKeyword" value="Search" style="display: none;"> 
+        </form>    
+</div>
+</div>
+<div class="col-xs-6 col-md-6">
+<div style="padding-top:45px;" class="fr">
+        Welcome , <strong><%= current_user.username %></strong>
+        <i><%= current_user.role %></i>
+        [ <%= link_to 'logout', user_logout_path, method: :delete %> ]
+</div>
+</div>
+</div>
+
+<nav class="navbar">
+	<div class="navbar-header">
+		<button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+	</div>
+	<div class="navbar-collapse collapse" id="navbar">
+
+	<ul class="nav navbar-nav">
+
+			<% @menus.each do |id, data| %>
+			<li class="dropdown upp">
+
+				<a href="#" class="dropdown-toggle" aria-expanded="true" role="button" data-toggle="dropdown">
+					<p class="top_left"></p>
+					<p class="top_center"> <%= Menuname.find_by(id: id.to_s.to_i).name  %> </p>
+					<p class="top_right"></p>
+					<div class="cl"></div>
+				</a>
+				<ul class="dropdown-menu" style="z-index:2;">
+					<% data.each do |d| %>
+					<li><a href="/<%= d[:controllers] + '/' + d[:action] %>">
+						<p> <%= d[:name] %> </p>
+					</a>
+				</li>
+				<% end %>
+			</ul>
+
+		</li>
+
+		<% end %>
+	</ul>
+	</div>
+</nav>
+
+<div class="breadscrumb">
+    <span>Dashboard</span>
+    <%= image_tag 'brk_center.png'%>
+</div>
