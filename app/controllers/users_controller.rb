@@ -67,6 +67,10 @@ class UsersController < ApplicationController
     render 'home/user/password'
   end
 
+  def user_view user
+    render 'show'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

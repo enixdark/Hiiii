@@ -20,10 +20,13 @@ Rails.application.routes.draw do
       put 'profile' => 'home#profile'
       get 'profile_password' => 'home#profile_password'
       put 'profile_password' => 'home#profile_password'
+
+      get 'view/:id' => 'users#show', as: :user_view
     end
 
     scope :menus do
       get 'index' => 'menus#index'
+      get 'view/:id' => 'menus#show', as: :menus_view
       get 'parent/:id'   => 'menus#menu_by' 
     end
   end

@@ -40,20 +40,28 @@ app.directive('menu',['$http','$compile',function($http,$compile){
 
 					var template  = $compile(
 						'<table class="table table-hover table-bordered table-condensed">'+
+						'<thead>'+
 						'<tr>'+
 						'<th>Name</th>'+
 						'<th>Controller</th>'+
 						'<th>Action</th>'+
+						'<th>Function</th>'+
 						'</tr>'+
+						'</thead>'+
+						'<tbody>' +
 						'<tr ng-repeat="d in data['+id+']">'+
 						'<td>{{ d.name }}</td>'+
 						'<td>{{ d.controller }}</td>'+
 						'<td>{{ d.action }}</td>'+
+						'<td><a href="/admin/menus/view/{{ d.id }}">Show</a>'+
+						'<a href="/admin/menus/{{ d.id }}/edit">Edit</a>'+
+						'<a href="/admin/menus/{{ d.id }}" data-method="delete" rel="nofollow" data-confirm="Are you sure?">Destroy</a></td>'+
 						'</tr>'+
+						'</tbody>'+
 						'</table>'
 					)($scope);
 
-					$('div.panel-body.'+id).html(
+					$('div.table-menu.'+id).html(
 						template
 					);
 				}).
