@@ -8,7 +8,9 @@
 		<div class="col-md-10">
 
 
-		<%= form_for(@current_user) do |f| %>
+		<%= form_for(@current_user, url:"", method: :put) do |f| %>
+
+        <%= notice %>
 		<table class="tblForm table-bordered table-striped" width="100%">
 			<tbody>
 				<tr>
@@ -21,7 +23,7 @@
             	</tr>
             	<tr>
                 	<th width="30%">Email: </th>
-                	<td width="70%"><p><%= f.text_field :username %></p></td>
+                	<td width="70%"><p><%= f.text_field :email %></p></td>
             	</tr>
             	<tr>
                 	<th width="30%"></th>

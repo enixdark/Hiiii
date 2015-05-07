@@ -1,10 +1,18 @@
 class MenusController < ApplicationController
   before_action :set_menu, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate!, :menu
 
   # GET /menus
   # GET /menus.json
   def index
-    @menus = Menu.all
+    # @menus = Menu.paginate(:page => params[:page], :per_page => 20)
+    #@menus = Menu.all.group_by(&:parent_id)#.paginate(:page => params[:page], :per_page => 20)
+    
+  end
+
+  # GET /.json
+  def menu_by
+    render json: Menu.where(parent_id: params[:id])
   end
 
   # GET /menus/1

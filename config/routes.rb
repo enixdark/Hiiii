@@ -1,19 +1,31 @@
 Rails.application.routes.draw do
   get 'sessions/new'
 
-  resources :menus
-  resources :users
+  
 
   get '/' => redirect('/admin')
   # root :to => redirect('/admin')
-  
   get    'user/login'   => 'sessions#new'
   post   'user/login'   => 'sessions#create'
   delete 'user/logout'  => 'sessions#destroy'
 
   scope '/admin' do
     root :to => 'home#index'
-    get 'admin/user/profile' => 'user#'
+    resources :menus, :except => [:show,:index]
+
+    resources :users, :except => [:show,:index]
+    scope :users do 
+      get 'index' => 'users#index'
+      get 'profile' => 'home#profile'
+      put 'profile' => 'home#profile'
+      get 'profile_password' => 'home#profile_password'
+      put 'profile_password' => 'home#profile_password'
+    end
+
+    scope :menus do
+      get 'index' => 'menus#index'
+      get 'parent/:id'   => 'menus#menu_by' 
+    end
   end
   # namespace :admin do
 

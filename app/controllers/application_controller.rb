@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   # before_filter :authenticate!
   include SessionsHelper
+  include HomeHelper
   def authenticate!
   	if current_user.nil?
   		redirect_to user_login_url
@@ -14,5 +15,9 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @current_user ||= User.find_by_id(session[:user_id]) if session[:user_id]
+  end
+
+  def menu
+    @_menus =  get_menus
   end
 end

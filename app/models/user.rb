@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
     before_save :email_downcase, :hash_password
 
-	  attr_accessor :password_confirmation, :signin, :remember_token
+	  attr_accessor :new_password,:password_confirmation, :signin, :remember_token
 
     validates :username,  presence: true, length: { maximum: 50 }
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

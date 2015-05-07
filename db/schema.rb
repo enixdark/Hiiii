@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150506090603) do
+ActiveRecord::Schema.define(version: 20150507031623) do
 
   create_table "menus", force: :cascade do |t|
     t.string   "name",          limit: 255
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20150506090603) do
     t.datetime "updated_at",                  null: false
     t.string   "password_digest", limit: 255
     t.string   "remember_digest", limit: 255
+    t.boolean  "active",          limit: 1
   end
 
 end

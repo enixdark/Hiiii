@@ -1,31 +1,35 @@
 <p id="notice"><%= notice %></p>
 
+<menu></menu>
+
 <h1>Listing Menus</h1>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
-      <th>Parent</th>
-      <th>Controller</th>
-      <th>Action</th>
-      <th>Display order</th>
-      <th colspan="3"></th>
+
     </tr>
   </thead>
-
   <tbody>
-    <% @menus.each do |menu| %>
-      <tr>
-        <td><%= menu.name %></td>
-        <td><%= menu.parent_id %></td>
-        <td><%= menu.controller %></td>
-        <td><%= menu.action %></td>
-        <td><%= menu.display_order %></td>
-        <td><%= link_to 'Show', menu %></td>
-        <td><%= link_to 'Edit', edit_menu_path(menu) %></td>
-        <td><%= link_to 'Destroy', menu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <% @menus.each do |id,menu| %>
+    <tr>
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading<%= id %>">
+          <h4 class="panel-title">
+            <a menu="<%= id %>" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= id %>" aria-expanded="false" aria-controls="collapse<%= id %>">
+            <%= id %>
+            </a>
+          </h4>
+        </div>
+        <div id="collapse<%= id %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<%= id %>">
+          <div class="panel-body <%= id %>">
+            
+          </div>
+        </div>
+      </div>
+
+    </tr>
     <% end %>
   </tbody>
 </table>
@@ -33,3 +37,5 @@
 <br>
 
 <%= link_to 'New Menu', new_menu_path %>
+
+

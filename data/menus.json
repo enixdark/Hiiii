@@ -283,5 +283,21 @@
             "parent_id": 4
         }
         
+    ],
+    "System": [
+        {
+            "controllers": "users", 
+            "action": "index", 
+            "display_order": 1, 
+            "name": "User List", 
+            "parent_id": 10
+        },
+        {
+            "controllers": "menus", 
+            "action": "index", 
+            "display_order": 2, 
+            "name": "Menus List", 
+            "parent_id": 10
+        }
     ]
 }
