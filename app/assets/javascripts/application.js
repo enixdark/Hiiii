@@ -74,11 +74,13 @@ app.directive('menu',['$http','$compile',function($http,$compile){
 		restrict: 'A',
 		link: function($scope, el, attrs, controller) {
 			id = parseInt(attrs.menu);
-			if($scope.menus.indexOf(id)<0){
-				el.on('click',function(){
+			// if($scope.menus.indexOf(id)<0){
+				el.on('click',function(e){
+					// console.log("hello");
+					// e.preventDefault();
 					$scope.get_menu(attrs.menu);
 				});
-			}
+			// }
 
 		}
 	};
@@ -87,4 +89,8 @@ app.directive('menu',['$http','$compile',function($http,$compile){
 app.controller('HomeCtrl', ['$scope','$http', function($scope,$http){
 	$scope.menus = [];
 	$scope.data = {};
+
+	$scope.click = function(){
+		console.log("hello");
+	}
 }]);

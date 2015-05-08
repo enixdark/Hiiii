@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
 <menu></menu>
 
@@ -17,8 +18,8 @@
       <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="heading<%= id %>">
           <h4 class="panel-title">
-            <a menu="<%= id %>" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= id %>" aria-expanded="false" aria-controls="collapse<%= id %>">
-            <%= id %>
+            <a menu="<%= id %>" ng-click="click()" ng-class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= id %>" aria-expanded="false" aria-controls="collapse<%= id %>">
+            <%= Menuname.find_by(id: id.to_s.to_i).name %>
             </a>
           </h4>
         </div>
