@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150508021006) do
+ActiveRecord::Schema.define(version: 20150508043526) do
 
   create_table "menunames", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20150508021006) do
     t.boolean  "active",                 limit: 1
     t.string   "password_reset_token",   limit: 255
     t.datetime "password_reset_sent_at"
+    t.string   "reset_digest",           limit: 255
+    t.datetime "reset_sent_at"
   end
 
   add_foreign_key "menus", "menunames", column: "parent_id"

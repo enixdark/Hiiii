@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   get 'sessions/new'
 
   
@@ -9,7 +13,7 @@ Rails.application.routes.draw do
   post   'user/login'   => 'sessions#create'
   delete 'user/logout'  => 'sessions#destroy'
   resources :password_resets,     only: [:new, :create, :edit, :update]
-  
+
   scope '/admin' do
     root :to => 'home#index'
     resources :menus, :except => [:show,:index]
@@ -21,7 +25,6 @@ Rails.application.routes.draw do
       put 'profile' => 'home#profile'
       get 'profile_password' => 'home#profile_password'
       put 'profile_password' => 'home#profile_password'
-      get 'password'
       get 'view/:id' => 'users#show', as: :users_view
     end
 
