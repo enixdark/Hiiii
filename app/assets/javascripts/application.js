@@ -26,6 +26,10 @@
 
 var app = angular.module('app', []);
 
+$(document).on('ready page:load', function(){
+  angular.bootstrap(document.body, ['app']);
+});
+
 app.directive('menu',['$http','$compile',function($http,$compile){
 	return {
 		// name: 'menuv1',
@@ -76,8 +80,8 @@ app.directive('menu',['$http','$compile',function($http,$compile){
 			id = parseInt(attrs.menu);
 			// if($scope.menus.indexOf(id)<0){
 				el.on('click',function(e){
-					// console.log("hello");
-					// e.preventDefault();
+					console.log("hello");
+					e.preventDefault();
 					$scope.get_menu(attrs.menu);
 				});
 			// }
@@ -91,6 +95,6 @@ app.controller('HomeCtrl', ['$scope','$http', function($scope,$http){
 	$scope.data = {};
 
 	$scope.click = function(){
-		console.log("hello");
-	}
+		console.log('hghghgghhg');
+	};
 }]);
