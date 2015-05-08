@@ -8,26 +8,27 @@ Rails.application.routes.draw do
   get    'user/login'   => 'sessions#new'
   post   'user/login'   => 'sessions#create'
   delete 'user/logout'  => 'sessions#destroy'
-
+  resources :password_resets,     only: [:new, :create, :edit, :update]
+  
   scope '/admin' do
     root :to => 'home#index'
     resources :menus, :except => [:show,:index]
 
     resources :users, :except => [:show,:index]
     scope :users do 
-      get 'index' => 'users#index'
+      get 'index' => 'users#index', as: :users_index
       get 'profile' => 'home#profile'
       put 'profile' => 'home#profile'
       get 'profile_password' => 'home#profile_password'
       put 'profile_password' => 'home#profile_password'
-
-      get 'view/:id' => 'users#show', as: :user_view
+      get 'password'
+      get 'view/:id' => 'users#show', as: :users_view
     end
 
     scope :menus do
-      get 'index' => 'menus#index'
+      get 'index' => 'menus#index', as: :menus_index
       get 'view/:id' => 'menus#show', as: :menus_view
-      get 'parent/:id'   => 'menus#menu_by' 
+      get 'parent/:id'   => 'menus#menu_by', as: :menus_parent 
     end
   end
   # namespace :admin do

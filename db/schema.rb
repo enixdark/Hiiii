@@ -11,31 +11,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150507031623) do
+ActiveRecord::Schema.define(version: 20150508021006) do
+
+  create_table "menunames", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "menus", force: :cascade do |t|
     t.string   "name",          limit: 255
-    t.integer  "parent_id",     limit: 4
     t.string   "controller",    limit: 255
     t.string   "action",        limit: 255
     t.string   "display_order", limit: 255
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.integer  "parent_id",     limit: 4
   end
+
+  add_index "menus", ["parent_id"], name: "fk_rails_fe36d84fa6", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",            limit: 255
-    t.string   "username",        limit: 255
-    t.string   "password",        limit: 255
-    t.string   "email",           limit: 255
-    t.string   "role",            limit: 255
-    t.integer  "level",           limit: 4
-    t.string   "login_key",       limit: 255
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.string   "password_digest", limit: 255
-    t.string   "remember_digest", limit: 255
-    t.boolean  "active",          limit: 1
+    t.string   "name",                   limit: 255
+    t.string   "username",               limit: 255
+    t.string   "password",               limit: 255
+    t.string   "email",                  limit: 255
+    t.string   "role",                   limit: 255
+    t.integer  "level",                  limit: 4
+    t.string   "login_key",              limit: 255
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.string   "password_digest",        limit: 255
+    t.string   "remember_digest",        limit: 255
+    t.boolean  "active",                 limit: 1
+    t.string   "password_reset_token",   limit: 255
+    t.datetime "password_reset_sent_at"
   end
 
+  add_foreign_key "menus", "menunames", column: "parent_id"
 end

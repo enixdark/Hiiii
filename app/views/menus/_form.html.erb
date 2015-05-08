@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name , class: "label" %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :parent_id %><br>
-    <%= f.number_field :parent_id %>
+    <%= f.label :menu %><br>
+    <%= f.collection_select(:parent_id, Menuname.all, :id, :name) %>
   </div>
   <div class="field">
     <%= f.label :controller %><br>

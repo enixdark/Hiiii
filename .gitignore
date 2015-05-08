@@ -53,3 +53,5 @@ bower.json
 # Ignore pow environment settings
 .powenv
 >>>>>>> 7d49829d13e9511a1b2f0353f55605b7b749be61
+
+development.rb
