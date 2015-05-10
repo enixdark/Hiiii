@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Hi</title>
-  <%= stylesheet_link_tag    'application'%>
-  <%= javascript_include_tag 'application'%>
-  <%= csrf_meta_tags %>
+	<title>Hi</title>
+	<%= stylesheet_link_tag    'application'%>
+	<%= javascript_include_tag 'application'%>
+	<%= csrf_meta_tags %>
 </head>
-<body ng-controller="HomeCtrl">
+<body class="home" ng-controller="HomeCtrl">
 
-<div class="container">
-<%= render 'layouts/header' %>
-<%= yield %>
-</div>
+	<div class="container">
+		<%= render 'layouts/header' %>
+
+		<div class="breadscrumb">
+			<div class="row">
+				<div class="col-md-3 left_pull">
+					<!-- <%= yield :left%> -->
+					<%= render 'layouts/left' %>
+				</div>
+
+				<div class="col-md-9 right_pull">
+						<%= yield :right%>
+
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

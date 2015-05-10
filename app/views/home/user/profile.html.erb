@@ -1,37 +1,32 @@
 
-<div class="breadscrumb">
-    <div class="row">
-		
-		<div class="col-md-2">
-		ddd
-		</div>
-		<div class="col-md-10">
+<% content_for :right do %>
 
+<!-- <div class="breadscrumb"> -->
 
 		<%= form_for(@current_user, url:"", method: :put) do |f| %>
 
         <%= notice %>
-		<table class="tblForm table-bordered table-striped" width="100%">
+		<table class="tblForm table-borderedS" width="100%">
 			<tbody>
 				<tr>
                 	<th width="30%">Username *</th>
-                	<td width="70%"><p><%= f.text_field :username %></p></td>
+                	<td width="70%"><p><%= f.text_field :username, class: 'form-control'  %></p></td>
             	</tr>
             	<tr>
                 	<th width="30%">Name: </th>
-                	<td width="70%"><p><%= f.text_field :name %></p></td>
+                	<td width="70%"><p><%= f.text_field :name, class: 'form-control' , class: 'form-control'  %></p></td>
             	</tr>
             	<tr>
                 	<th width="30%">Email: </th>
-                	<td width="70%"><p><%= f.text_field :email %></p></td>
+                	<td width="70%"><p><%= f.text_field :email , class: 'form-control' %></p></td>
             	</tr>
             	<tr>
                 	<th width="30%"></th>
-                	<td width="70%"><p><%= f.submit :Save, class: 'btn btn-primary' %></p></td>
+                	<td width="70%"><p><%= f.submit :Save, class: 'btn_small_blue' %></p></td>
             	</tr>
 			</tbody>
 		</table>
 		<% end %>
-		</div>
-    </div>
-</div>
+<!-- </div> -->
+
+<% end %>

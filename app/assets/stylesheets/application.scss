@@ -28,7 +28,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     // vertical-align: baseline;
     font-style: inherit;
     font-weight: inherit;
-    vertical-align: baseline;
+    // vertical-align: baseline;
 }
 
 table {
@@ -40,8 +40,29 @@ table {
 
 body {
     line-height: 1;
-    background-color: #f3f3f3 !important;
+    font-size: 12px;
+    /*background-color: #f3f3f3 !important;*/
+    background: url("/assets/banner_bg.png") repeat-x scroll 0 0 #fff !important;
+    .login {
+        background: url("/assets/bg_login_top.jpg") no-repeat scroll center top #f3f3f3 !important;
+        color: #bebebe;
+        font-family: Tahoma,Arial,Helvetica,sans-serif;
+        font-size: 11px;
+        margin: 0;
+    }
+
+    .home {
+        background: url("/assets/banner_bg.png") repeat-x scroll 0 0 #fff !important;
+        color: #323232;
+        font-family: Arial,Helvetica,sans-serif;
+        font-size: 12px;
+        line-height: 15px;
+        margin: 0;
+        padding: 0;
+    }
 }
+
+
 ol, ul {
     list-style: outside none none;
 }

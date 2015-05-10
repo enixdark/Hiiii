@@ -7,8 +7,208 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+
+
+
+
+.tblForm  {
+	th {
+		background: none repeat scroll 0 0 #f1f1f1;
+		border: 1px solid #c5c5c5;
+		font-weight: bold;
+		padding: 7px;
+		text-align: right;
+		vertical-align: top;
+	}
+	td{
+		border: 1px solid #c5c5c5;
+		padding: 3px;
+	}
+
+
+	input[type=text], input[type=password] {
+		width: 60%;
+	}
+}
+
+
+a {
+	display: inline-block;
+	background: no-repeat scroll 0 0 transparent;
+}
+
+.btn_small_pink, .btn_medium_pink, .btn_large_pink, .btn_small_blue, .btn_medium_blue, .btn_large_blue, .btn_small_grey, .btn_medium_grey, .btn_large_grey {
+    background: url("/assets/btn.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none;
+    cursor: pointer;
+    text-align: center;
+}
+.btn_small_blue:hover {
+    background-position: -7px -5px;
+    color: #fff;
+    font-weight: bold;
+    height: 27px;
+    width: 91px;
+}
+.btn_small_blue {
+    background-position: -7px -34px;
+    color: #fff;
+    font-weight: bold;
+    height: 27px;
+    width: 91px;
+}
+.btn_medium_blue:hover {
+    background-position: -111px -5px;
+    color: #fff;
+    font-weight: bold;
+    height: 27px;
+    width: 150px;
+}
+.btn_medium_blue {
+    background-position: -111px -34px;
+    color: #fff;
+    font-weight: bold;
+    height: 27px;
+    width: 150px;
+}
+.btn_large_blue:hover {
+    background-position: -273px -5px;
+    color: #fff;
+    font-weight: bold;
+    height: 27px;
+    width: 250px;
+}
+.btn_large_blue {
+    background-position: -273px -34px;
+    color: #fff;
+    font-weight: bold;
+    height: 27px;
+    width: 250px;
+}
+.btn_small_pink:hover {
+    background-position: -7px -115px;
+    color: #fff;
+    font-weight: bold;
+    height: 27px;
+    width: 91px;
+}
+.btn_small_pink {
+    background-position: -7px -144px;
+    color: #fff;
+    font-weight: bold;
+    height: 27px;
+    width: 91px;
+}
+.btn_medium_pink:hover {
+    background-position: -111px -115px;
+    color: #fff;
+    font-weight: bold;
+    height: 27px;
+    width: 150px;
+}
+.btn_medium_pink {
+    background-position: -111px -144px;
+    color: #fff;
+    font-weight: bold;
+    height: 27px;
+    width: 150px;
+}
+.btn_large_pink:hover {
+    background-position: -273px -115px;
+    color: #fff;
+    font-weight: bold;
+    height: 27px;
+    width: 250px;
+}
+.btn_large_pink {
+    background-position: -273px -144px;
+    color: #fff;
+    font-weight: bold;
+    height: 27px;
+    width: 250px;
+}
+.btn_small_grey {
+    background-position: -7px -63px;
+    color: #5d5d5d;
+    font-weight: bold;
+    height: 29px;
+    width: 91px;
+}
+.btn_medium_grey {
+    background-position: -111px -63px;
+    color: #5d5d5d;
+    font-weight: bold;
+    height: 29px;
+    width: 150px;
+}
+.btn_large_grey {
+    background-position: -273px -63px;
+    color: #5d5d5d;
+    font-weight: bold;
+    height: 29px;
+    width: 250px;
+}
+
+.height10 {
+    height: 10px;
+}
+
+.left_pull{
+	// width:19% !important;
+	padding-top: 22px ; 
+	padding-left: 33px !important; 
+	padding-bottom: 22px;
+}
+.right_pull{
+	// border: 1px solid #929191;
+	// padding-top: 22px; 
+	padding-right: 15px; 
+	margin-left: -2%; 
+	margin-top: 22px;
+	margin-bottom: 22px;
+	
+}
+
+.content_left  {
+	-moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: -moz-use-text-color #c5c5c5 #c5c5c5;
+    border-image: none;
+    border-right: 1px solid #c5c5c5;
+    border-style: none solid solid;
+    border-width: medium 1px 1px;
+    width:190px;
+
+	ul {
+		li {
+			border-bottom: 1px solid #c5c5c5;
+			// padding: 5px;
+		}
+		a {
+			color: #807e7e;
+			padding: 5px;
+		}
+	}
+	
+}
+
+
+
+.left_top {
+    background: url("/assets/menu_left_top_bg.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 20px;
+}
+
 .form-control{
 	height:23px !important;
+	font-size: 10px !important;
 }
 
 
@@ -144,13 +344,24 @@ a.imghover:hover img {
 
 .breadscrumb {
 	position: relative;
-	background: none repeat scroll 0 0 #efefef;
+	// background: none repeat scroll 0 0 #efefef;
 	border: 1px solid #929191;
 	border-radius: 3px;
 	font-weight: bold;
 	line-height: 20px;
 	margin: 7px 0;
-	span {
+	// span {
+	// 	padding: 0 10px;
+	// }
+}
+
+.dashscrumb {
+    border: 1px solid #929191;
+    border-radius: 3px;
+    font-weight: bold;
+    margin: 7px 0;
+    position: relative;
+    span {
 		padding: 0 10px;
 	}
 }
@@ -166,12 +377,18 @@ p {
 	padding: 0px !important;
 }
 
+.navbar {
+    margin-bottom: 0px !important;
+    min-height: 0px !important;
+}
+
 #navbar{
 	border-radius: 3px;
 	font-size: 13px;
 	height: 36px;
 	padding-left:0px;
 	background: url("/assets/menu_nav_bg.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+
 }
 
 

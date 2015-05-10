@@ -44,7 +44,7 @@ class HomeController < ApplicationController
 
 	end
 
-	protected
+	private
 
       def home_params
       	if params.has_key?(:user)

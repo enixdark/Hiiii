@@ -10,36 +10,44 @@
       </ul>
     </div>
   <% end %>
+  
+  <table width="100%" class="tblForm">
+            <tbody><tr>
+                <th width="30%"><%= f.label :name %></th>
+                <td width="70%"><p><%= f.text_field :name, class: 'form-control' %></p></td>
+            </tr>
+            <tr>
+                <th><%= f.label :username %></th>
+                <td><%= f.text_field :username, class: 'form-control' %></td>
+            </tr>
+            <tr>
+                <th><%= f.label :email %></th>
+                <td><%= f.text_field :email, class: 'form-control' %></td>
+            </tr>
+            <tr>
+                <th><%= f.label :role %></th>
+                <td><%= f.text_field :role, class: 'form-control' %></td>
+            </tr>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :username %><br>
-    <%= f.text_field :username %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :role %><br>
-    <%= f.text_field :role %>
-  </div>
-  <div class="field">
-    <%= f.label :level %><br>
-    <%= f.number_field :level %>
-  </div>
-  <div class="field">
-    <%= f.label :login_key %><br>
-    <%= f.text_field :login_key %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+            <tr>
+                <th><%= f.label :level %></th>
+                <td><%= f.text_field :level, class: 'form-control' %></td>
+            </tr>
+
+            <tr>
+                <th><%= f.label :login_key %></th>
+                <td><%= f.text_field :login_key, class: 'form-control' %></td>
+            </tr>
+
+            <tr>
+                <th>Active:</th>
+                <td><input type="hidden" value="0" id="UserActive_" name="data[User][active]"><input type="checkbox" checked="checked" id="UserActive" value="1" name="data[User][active]"></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <%= f.submit 'Save', class:  "btn_small_blue"%>
+            </tr>
+        </tbody></table>
+
 <% end %>

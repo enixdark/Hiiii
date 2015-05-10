@@ -9,7 +9,6 @@ class SessionsController < ApplicationController
     # user = User.where('email = :value or username= :value',{ value: session_params[:signin]}).first
     if user = User.authenticate(session_params[:signin],session_params[:password])
       log_in user
-      # byebug
       redirect_to root_path
     else
       # flash[:danger] = 'Invalid email/password combination'
@@ -22,7 +21,7 @@ class SessionsController < ApplicationController
   	redirect_to root_path
   end
 
-  protected
+  private
   	def session_params
   		params.require(:session).permit(:signin,:password)
   	end

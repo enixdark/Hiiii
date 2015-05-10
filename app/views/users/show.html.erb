@@ -1,39 +1,59 @@
+<%= content_for :right do %>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+<table width="100%" class="tblList table table-hover table-bordered table-condensed">
+        <tbody>
+        <tr>
+            <th style="border-right:none;" colspan="3" id="textleft"><b>admin</b></th>
+            <th style="border-left:none;" colspan="2" id="rightImage">
+                    <button onclick="location.href='/admin/users/view/145';" name="previous" class="btn_small_blue" type="button">Previous</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button onclick="location.href='/admin/users/view/106';" name="next" class="btn_small_blue" type="button">Next</button>
+                            </th>
+        </tr>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+        <tr>
+            <td colspan="1">Email address:</td>
+            <td colspan="2">admin@site.com&nbsp;</td>
+            <td width="35%" style="vertical-align:middle;" rowspan="8" colspan="2">
+                            </td>
+        </tr>
+        <tr>
+            <td colspan="1">Name:</td>
+            <td colspan="2"><%= @user.name %>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="1">Username:</td>
+            <td colspan="2"><%= @user.username %>  &nbsp;</td> 
+        </tr>
+        <tr>
+            <td colspan="1">Email:</td>
+            <td colspan="2"><%= @user.email %>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="1">Role:</td>
+            <td colspan="2"><%= @user.role %>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="1">Active:</td>
+            <td colspan="2">Active&nbsp;</td>
+        </tr>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
+        <tr>
+            <td colspan="1">Level:</td>
+            <td colspan="2"><%= @user.level %>&nbsp;</td>
+        </tr>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+        <tr>
+            <td colspan="1">Login key:</td>
+            <td colspan="2"><%= @user.login_key %>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="1">Notification:</td>
+            <td colspan="2"><a href="/admin/users/notification_export/2">Export</a>&nbsp;</td>
+        </tr>
+        
+    </tbody>
+    </table>
 
-<p>
-  <strong>Role:</strong>
-  <%= @user.role %>
-</p>
-
-<p>
-  <strong>Level:</strong>
-  <%= @user.level %>
-</p>
-
-<p>
-  <strong>Login key:</strong>
-  <%= @user.login_key %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<% end %>

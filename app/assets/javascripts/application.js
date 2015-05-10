@@ -57,9 +57,9 @@ app.directive('menu',['$http','$compile',function($http,$compile){
 						'<td>{{ d.name }}</td>'+
 						'<td>{{ d.controller }}</td>'+
 						'<td>{{ d.action }}</td>'+
-						'<td><a href="/admin/menus/view/{{ d.id }}">Show</a>'+
-						'<a href="/admin/menus/{{ d.id }}/edit">Edit</a>'+
-						'<a href="/admin/menus/{{ d.id }}" data-method="delete" rel="nofollow" data-confirm="Are you sure?">Destroy</a></td>'+
+						'<td><a href="/admin/menus/view/{{ d.id }}"><image src="/assets/view.png"/></a>'+
+						'<a href="/admin/menus/{{ d.id }}/edit"><image src="/assets/edit.png"/></a>'+
+						'<a href="/admin/menus/{{ d.id }}" data-method="delete" rel="nofollow" data-confirm="Are you sure?"><image src="/assets/delete.png"/></a></td>'+
 						'</tr>'+
 						'</tbody>'+
 						'</table>'

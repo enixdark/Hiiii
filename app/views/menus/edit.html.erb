@@ -1,6 +1,9 @@
-<h1>Editing Menu</h1>
+<%= content_for :right do %>
+
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @menu %> |
 <%= link_to 'Back', menus_path %>
+
+<% end %>

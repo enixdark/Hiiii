@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.paginate(:page => params[:page], :per_page => 1)
   end
 
   # GET /users/1
@@ -74,7 +74,7 @@ class UsersController < ApplicationController
 
   private
     def set_user
-      if not params[:user][:id].nil?
+      if (params.has_key? :user) && (not params[:user][:id].nil?)
         @user = User.find(params[:user][:id])
       elsif not params[:id].nil?
         @user = User.find(params[:id])
