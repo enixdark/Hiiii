@@ -21,6 +21,11 @@
                 <td><%= f.text_field :username, class: 'form-control' %></td>
             </tr>
             <tr>
+                <th><%= f.label :password %></th>
+                <td><%= f.password_field :password, class: 'form-control' %></td>
+            </tr>
+
+            <tr>
                 <th><%= f.label :email %></th>
                 <td><%= f.text_field :email, class: 'form-control' %></td>
             </tr>
@@ -31,7 +36,7 @@
 
             <tr>
                 <th><%= f.label :level %></th>
-                <td><%= f.text_field :level, class: 'form-control' %></td>
+                <td><%= f.number_field :level, class: 'form-control' %></td>
             </tr>
 
             <tr>

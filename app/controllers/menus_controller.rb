@@ -1,7 +1,7 @@
 class MenusController < ApplicationController
   before_action :set_menu, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate!, :menu
-
+  # before_action :clear
   # GET /menus
   # GET /menus.json
   def index

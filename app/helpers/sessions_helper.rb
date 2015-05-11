@@ -1,6 +1,7 @@
 module SessionsHelper
 
   def log_in user
+    user.generate
   	session[:user_id] = user.id
   end
 

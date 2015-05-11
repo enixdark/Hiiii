@@ -37,7 +37,11 @@ class User < ActiveRecord::Base
     end
 
     def forget
-      update_attribute(:remember_digest, nil)
+      update_attributes(remember_digest: nil,login_key: nil)
+    end
+
+    def generate
+      update_attributes(login_key: SecureRandom.hex)
     end
 
     def remember
@@ -81,7 +85,25 @@ class User < ActiveRecord::Base
       BCrypt::Password.new(digest).is_password?(token)
     end
 
+    def next
+        if user = User.where("id > ?", self.id).first
+          user
+        else
+          User.first
+        end
+    end
+
+    def prev
+        if user = User.where("id < ?", self.id).last
+          user
+        else
+          User.last
+        end
+    end
+
     protected
+
+      
 
       def email_downcase
         self.email = email.downcase 

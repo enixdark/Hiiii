@@ -1,20 +1,31 @@
-<h1>Reset password</h1>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
+<div class="container">
+	<div class="row vertical-align centering">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<div id="main">
+					<%= image_tag 'logo.png' %>
+					<br/>
+					<div class="full_w">
+						<%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
 
-      <%= hidden_field_tag :email, @user.email %>
+						<%= hidden_field_tag :email, @user.email %>
+						<div class="field">
+							<%= f.label :password %>
+							<%= f.password_field :password, class: 'form-control' %>
+						</div>
+						<div class="field">
+							<%= f.label :password_confirmation, "Confirmation" %>
+							<%= f.password_field :password_confirmation, class: 'form-control' %>
+						</div>
+						<%= f.submit "Update password", class:'ok' %>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
-
-      <%= f.submit "Update password", class: "btn btn-primary" %>
-    <% end %>
-  </div>
+	</div>
 </div>
 
 

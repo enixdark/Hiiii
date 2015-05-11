@@ -6,12 +6,13 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.paginate(:page => params[:page], :per_page => 1)
+    @users = User.paginate(:page => params[:page], :per_page => 2)
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+
   end
 
   # GET /users/new
@@ -30,7 +31,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        @user.send_activation_email
+        # @user.send_activation_email
         format.html { redirect_to users_view_path(@user), notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
@@ -73,7 +74,10 @@ class UsersController < ApplicationController
   end
 
   private
+
+    #assign user based on id when use post/put method  
     def set_user
+      # byebug
       if (params.has_key? :user) && (not params[:user][:id].nil?)
         @user = User.find(params[:user][:id])
       elsif not params[:id].nil?
