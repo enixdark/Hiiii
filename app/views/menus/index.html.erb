@@ -1,7 +1,9 @@
 <%= content_for :right do %>
 
 <p id="notice"><%= notice %></p>
-<%= link_to 'New Menu', new_menu_path, class: 'btn_small_blue' %>
+<button onclick="location.href='<%= new_menu_path %>';" name="back" class="btn_small_blue pull-right" type="button">New menu</button>
+<br/>
+<br/>
 <table class="table table-hover table-bordered table-condensed">
   
   <tbody>

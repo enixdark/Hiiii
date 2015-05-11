@@ -2,11 +2,23 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate!, :menu
 
-  
+
   # GET /users
   # GET /users.json
   def index
-    @users = User.paginate(:page => params[:page], :per_page => 2)
+    if request.get?
+      @users = User.paginate(:page => params[:page], :per_page => 2)
+    elsif request.post?
+      # byebug
+      @users = User.where(nil)
+      filter_params.each do |key, value|
+        # byebug
+        @users = @users.public_send(key, value) if value.present?
+        # @users = @users.where(" :key LIKE :value", { key: key, value: value }) if value.present?
+      end
+
+      @users = @users.paginate(:page => params[:page], :per_page => 2)
+    end
   end
 
   # GET /users/1
@@ -85,6 +97,12 @@ class UsersController < ApplicationController
       end
     end
 
+
+    def filter_params
+
+      params.require(:user_search).slice(:start_name, :start_username, 
+        :start_email, :start_roles, :start_level)
+    end
     def user_params
       params.require(:user).permit(:name, :username, :password, :email, :role, :level, :login_key)
     end

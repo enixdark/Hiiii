@@ -5,16 +5,17 @@
 <table width="100%" class="tblList table table-hover table-bordered table-condensed">
         <tbody>
         <tr>
-            <th style="border-right:none;" colspan="3" id="textleft"><b>admin</b></th>
+            <th style="border-right:none;" colspan="3" id="textleft"></th>
             <th style="border-left:none;" colspan="2" id="rightImage">
-                    <button onclick="location.href='/admin/users/view/<%= @user.prev.id %>';" name="previous" class="btn_small_blue" type="button">Previous</button>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <button onclick="location.href='/admin/users/view/<%= @user.next.id %>';" name="next" class="btn_small_blue" type="button">Next</button>
-                            </th>
+                    <button onclick="location.href='/admin/users/view/<%= @user.prev.id %>';" name="previous" class="btn_small_blue pull-right" type="button">Previous</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button onclick="location.href='/admin/users/view/<%= @user.next.id %>';" name="next" class="btn_small_blue pull-right" type="button">Next</button>
+                    
+            </th>
         </tr>
 
         <tr>
             <td colspan="1">Email address:</td>
-            <td colspan="2">admin@site.com&nbsp;</td>
+            <td colspan="2"><%= @user.email %>&nbsp;</td>
             <td width="35%" style="vertical-align:middle;" rowspan="8" colspan="2">
                             </td>
         </tr>
@@ -48,10 +49,7 @@
             <td colspan="1">Login key:</td>
             <td colspan="2"><%= @user.login_key %>&nbsp;</td>
         </tr>
-        <tr>
-            <td colspan="1">Notification:</td>
-            <td colspan="2"><a href="/admin/users/notification_export/2">Export</a>&nbsp;</td>
-        </tr>
+        
         
     </tbody>
     </table>

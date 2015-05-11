@@ -13,10 +13,15 @@ class User < ActiveRecord::Base
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
 
+
+    scope :start_name, -> (name) { where("name like ?","#{name}") }
+    scope :start_username, -> (username) { where("username like ?","#{username}") }
+    scope :start_email, -> (email) { where("email like ?","#{email}") }
+    scope :start_level, -> (username) { where level: level }
+    scope :start_roles, -> (roles) { where roles: roles }
     # def password_changed?
     #   !@new_password.blank?
     # end
-    
     def self.digest string 
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost

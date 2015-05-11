@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     resources :users, :except => [:show,:index]
     scope :users do 
       get 'index' => 'users#index', as: :users_index
+      post 'index' => 'users#index'
       get 'profile' => 'home#profile'
       put 'profile' => 'home#profile'
       get 'profile_password' => 'home#profile_password'
