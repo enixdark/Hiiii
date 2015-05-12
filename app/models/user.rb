@@ -17,8 +17,8 @@ class User < ActiveRecord::Base
     scope :start_name, -> (name) { where("name like ?","#{name}") }
     scope :start_username, -> (username) { where("username like ?","#{username}") }
     scope :start_email, -> (email) { where("email like ?","#{email}") }
-    scope :start_level, -> (username) { where level: level }
-    scope :start_roles, -> (roles) { where roles: roles }
+    scope :start_level, -> (level) { where level: level }
+    scope :start_role, -> (roles) { where role: role }
     # def password_changed?
     #   !@new_password.blank?
     # end

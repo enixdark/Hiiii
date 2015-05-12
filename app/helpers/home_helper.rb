@@ -4,9 +4,12 @@ module HomeHelper
     menus = $redis.get('menus')
 	if menus.nil?
       menu = Hash.new
-	  Menu.pluck(:parent_id).to_set.sort.each do |id|
+	  #Menu.pluck(:parent_id)
+	  #Menu.all.map(&:parent_id).to_set.reject(&:blank?).sort.each 
+	  Menuname.pluck(:id).each do |id|
 	    menu[id] = Array.new Menu.where(parent_id: id)
 	  end
+	  # byebug
 	  $redis.set('menus',menu.sort.to_json)
 	  $redis.expire("menus",120.minutes.to_i)
 	  menus = menu.to_json

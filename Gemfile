@@ -32,6 +32,7 @@ gem 'redis-store'
 gem 'redis-namespace'
 gem 'redis-rails'
 gem 'redis-rack-cache'
+gem 'hirb'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

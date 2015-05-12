@@ -35,11 +35,13 @@
 	<ul class="nav navbar-nav">
 
 			<% @_menus.each do |id, data| %>
+			<% @Mn = Menuname.find_by(id: id.to_s.to_i) %>
+            <% if not @Mn.nil? %> 
 			<li class="dropdown upp">
 
 				<a href="#" class="dropdown-toggle" aria-expanded="true" role="button" data-toggle="dropdown">
 					<p class="top_left"></p>
-					<p class="top_center"> <%= Menuname.find_by(id: id.to_s.to_i).name  %> </p>
+					<p class="top_center"> <%= @Mn.name %> </p>
 					<p class="top_right"></p>
 					<div class="cl"></div>
 				</a>
@@ -52,7 +54,8 @@
 				<% end %>
 			</ul>
 
-		</li>
+			</li>
+			<% end %>
 
 		<% end %>
 	</ul>

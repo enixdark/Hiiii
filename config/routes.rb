@@ -17,9 +17,9 @@ Rails.application.routes.draw do
   scope '/admin' do
     root :to => 'home#index'
     resources :menus, :except => [:show,:index]
-
+    resources :menunames#, :except => [:index, :show]
     resources :users, :except => [:show,:index]
-    scope :users do 
+    scope :users do
       get 'index' => 'users#index', as: :users_index
       post 'index' => 'users#index'
       get 'profile' => 'home#profile'

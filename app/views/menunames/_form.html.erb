@@ -1,0 +1,33 @@
+
+<%= form_for(@menuname) do |f| %>
+  <% if @menuname.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@menuname.errors.count, "error") %> prohibited this menuname from being saved:</h2>
+
+      <ul>
+      <% @menuname.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table width="100%" class="tblForm">
+            <tbody>
+
+            <tr>
+                <th><%= f.label :name %></th>
+                <td><%= f.text_field :name, class: 'form-control' %></td>
+            </tr>
+            <tr>
+                <th>
+                </th>
+                <td>
+                    <%= f.submit 'Save', class:  "btn_small_blue"%>
+                    <button onclick="location.href='<%= menus_index_path %>';" name="back" class="btn_small_blue" type="button">Back</button>
+            </tr>
+        </tbody>
+  </table>
+
+<% end %>
+

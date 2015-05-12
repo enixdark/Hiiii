@@ -20,6 +20,7 @@
   </thead>
 
   <tbody>
+
     <tr class="rowFilter">
       <%= form_for(:user_search, url: users_index_path) do |f| %>
 
@@ -27,7 +28,7 @@
       <th><%= f.text_field :start_username, class: 'form-control' %></th>
       <th><%= f.email_field :start_email, class: 'form-control' %></th>
       <th>
-        <select name="user[start_roles]">
+        <select name="user_search[start_role]">
           <option value="">--- All ---</option>
 
           <option value="1">admin</option>
@@ -39,10 +40,11 @@
       <th><%= f.number_field :start_level, class: 'form-control' %></th>
       <th>
         <input type="image" style="margin-right:5px" title="filter" name="data[filter]" src="http://freshstudio.hiworld.com.vn/img/admin/filter.png">
-    <% end %>
+      
+
         <input onclick="location.href='<%= users_index_path %>';" method='get' type="image" style="margin-right:5px" title="reset" name="data[reset]" src="http://freshstudio.hiworld.com.vn/img/admin/reset.png">
       </th>
-
+    <% end %>
       
     </tr>
 
