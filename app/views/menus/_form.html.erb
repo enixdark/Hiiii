@@ -1,12 +1,9 @@
 <%= form_for(@menu) do |f| %>
   <% if @menu.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@menu.errors.count, "error") %> prohibited this menu from being saved:</h2>
+    <div class="alert alert-danger">
 
       <ul>
-      <% @menu.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+      <li><%= @menu.errors.full_messages[0] %></li>
       </ul>
     </div>
   <% end %>
@@ -19,10 +16,10 @@
                 <td><%= f.text_field :name, class: 'form-control' %></td>
             </tr>
             <tr>
-                <th><%= f.label :menu %></th>
-                <td><%= f.collection_select(:parent_id, Menuname.all, :id, :name,class: 'form-control' )%></td>
+                <th><%= f.label "Parent menu" %></th>
+                <td><%= f.collection_select(:parent_id, Menuname.all, :id, :name, { prompt: 'Select menu',class: 'form-control' }
+                )%></td>
             </tr>
-            
 
             <tr>
                 <th><%= f.label :controller %></th>
@@ -38,10 +35,8 @@
                 <td><%= f.number_field :display_order, class: 'form-control' %></td>
             </tr>
 
-            
             <tr>
                 <th>
-                  
                 </th>
                 <td>
                     <%= f.submit 'Save', class:  "btn_small_blue"%>

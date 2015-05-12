@@ -39,6 +39,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    # byebug
     @user = User.new(user_params)
 
     respond_to do |format|
@@ -56,16 +57,32 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    # byebug
     respond_to do |format|
-      if @user.update(user_params)
-        if request.path.include? 'profile'
-          format.html { redirect_to profile_path, notice: 'Data was successfully updated.' }
+      path = request.path
+      if path.include? 'password' 
+        _params = pass_params
+        _next = profile_password_path
+        _render = 'home/user/password'
+        notice = 'Password was successfully updated.'
+      else 
+        _params = user_params
+        if path.include? 'profile'
+          _next = profile_path
+          _render = "home/user/profile"
+          notice = 'User was successfully updated.'
         else
-          format.html { redirect_to users_view_path(@user), notice: 'User was successfully updated.' }
-        end 
-        format.json { render :show, status: :ok, location: @user }
+          _next = users_view_path(@user)
+          notice = 'User was successfully updated.'
+          _render = :edit
+        end
+      end
+
+      if @user.update(_params)
+        format.html { redirect_to _next, notice: notice }
+        # format.json { render :show, status: :ok, location: @user }
       else
-        format.html { render :edit }
+        format.html { render _render }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -107,7 +124,12 @@ class UsersController < ApplicationController
       params.require(:user_search).slice(:start_name, :start_username, 
         :start_email, :start_roles, :start_level)
     end
+
+    def pass_params
+      params.require(:user).permit(:password, :new_password, :password_confirmation)
+    end
+
     def user_params
-      params.require(:user).permit(:name, :username, :password, :email, :role, :level, :login_key)
+      params.require(:user).permit(:name, :username, :email, :role, :password)
     end
 end

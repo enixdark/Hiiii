@@ -1,12 +1,8 @@
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
+    <div class="alert alert-danger">
       <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+      <li><%= @user.errors.full_messages[0] %></li>
       </ul>
     </div>
   <% end %>
@@ -20,28 +16,17 @@
                 <th><%= f.label :username %></th>
                 <td><%= f.text_field :username, class: 'form-control' %></td>
             </tr>
-            <tr>
-                <th><%= f.label :password %></th>
-                <td><%= f.password_field :password, class: 'form-control' %></td>
-            </tr>
 
             <tr>
                 <th><%= f.label :email %></th>
-                <td><%= f.text_field :email, class: 'form-control' %></td>
+                <td><%= f.email_field :email, class: 'form-control' %></td>
             </tr>
             <tr>
                 <th><%= f.label :role %></th>
-                <td><%= f.text_field :role, class: 'form-control' %></td>
-            </tr>
-
-            <tr>
-                <th><%= f.label :level %></th>
-                <td><%= f.number_field :level, class: 'form-control' %></td>
-            </tr>
-
-            <tr>
-                <th><%= f.label :login_key %></th>
-                <td><%= f.text_field :login_key, class: 'form-control' %></td>
+                <td><%= f.select(:role , ROLES , { prompt: 'Select menu',class: 'form-control' }
+                )%>
+                </td>
+                
             </tr>
 
             <tr>

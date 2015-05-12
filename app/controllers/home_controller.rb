@@ -8,12 +8,13 @@ class HomeController < ApplicationController
 
 	def update(_params, template)
       notice = nil
+      @user = @current_user
 	  if request.put?
 	  	begin
 	  	  if block_given?
 	  	  	Proc.new.call
 	  	  else
-	  	    @current_user.update_attributes(_params)
+	  	    @user.update_attributes(_params)
 	  	  end
 	      notice = "user update success"
 	  	rescue Error => e
@@ -30,14 +31,15 @@ class HomeController < ApplicationController
 	def profile_password
 
 	  self.update(pass_params,'home/user/password') do 
+	  	@user = @current_user
 	  	if pass_params[:new_password] != pass_params[:password_confirmation]
 	  	  notice = "password don't match"
 	  	else
 	  	  # byebug
 	  	  @current_user.password = pass_params[:new_password]
-	  	  if @current_user.valid?
-	  		@current_user.save
-	  		log_in @current_user, bypass: true
+	  	  if @user.valid?
+	  		@user.save
+	  		log_in @user, bypass: true
 	  	  end
 	  	end
 	  end

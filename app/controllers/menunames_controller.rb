@@ -42,8 +42,9 @@ class MenunamesController < ApplicationController
   # PATCH/PUT /menunames/1
   # PATCH/PUT /menunames/1.json
   def update
+    @menuname.name = menuname_params[:name]
     respond_to do |format|
-      if @menuname.update(menuname_params)
+      if @menuname.save!
         format.html { redirect_to menus_index_path, notice: 'Menuname was successfully updated.' }
         format.json { render :show, status: :ok, location: @menuname }
       else
@@ -56,7 +57,7 @@ class MenunamesController < ApplicationController
   # DELETE /menunames/1
   # DELETE /menunames/1.json
   def destroy
-    
+
     @menuname.destroy
     respond_to do |format|
       format.html { redirect_to menus_index_path, notice: 'Menuname was successfully destroyed.' }

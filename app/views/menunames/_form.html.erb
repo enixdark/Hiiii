@@ -5,7 +5,7 @@
       <h2><%= pluralize(@menuname.errors.count, "error") %> prohibited this menuname from being saved:</h2>
 
       <ul>
-      <% @menuname.errors.full_messages.each do |message| %>
+      <% @menuname.errors.full_messages[0..1].each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

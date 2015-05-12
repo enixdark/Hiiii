@@ -3,9 +3,16 @@
 
 <!-- <div class="breadscrumb"> -->
 
-		<%= form_for(@current_user, url:"", method: :put) do |f| %>
+		<%= form_for(@user, url:"", method: :put) do |f| %>
 
+        <% if notice %>
+        <div class="alert alert-success">
         <%= notice %>
+        </div>
+        <% end %>
+
+        <%= render 'home/user/error_message' %>
+
 		<table class="tblForm table-borderedS" width="100%">
 			<tbody>
                 <%= f.hidden_field :id, class: 'form-control' %>

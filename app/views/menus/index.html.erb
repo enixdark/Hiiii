@@ -1,7 +1,11 @@
 <%= content_for :right do %>
 
-<p id="notice"><%= notice %></p>
-<button onclick="location.href='<%= new_menuname_path %>';" name="back" class="btn_small_blue pull-right" type="button">New menu</button>
+<% if notice %>
+        <div class="alert alert-success">
+        <%= notice %>
+        </div>
+<% end %>
+<button onclick="location.href='<%= new_menu_path %>';" name="back" class="btn_small_blue pull-right" type="button">New menu</button>
 <br/>
 <br/>
 <table class="table table-hover table-bordered table-condensed">
@@ -18,16 +22,15 @@
             <%= @Mn.name %>
             </a>
 
-            <%= link_to link_to image_tag('delete.png'), @Mn, method: :delete, data: { confirm: 'Are you sure?' }, class: 
-            'pull-right' %>
+            <%= link_to link_to image_tag('edit.png'), edit_menuname_path(@Mn) , class: 'pull-right' %>
+
+            <%= link_to link_to image_tag('delete.png'), @Mn, method: :delete, data: { confirm: 'Are you sure?' }, class: 'pull-right' %>
 
           </h5>
         </div>
         <div id="collapse<%= id %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<%= id %>">
           <div class="panel-body ">
-            <button onclick="location.href='<%= new_menu_path %>?<%= @Mn.id %>';" name="back" class="btn_small_blue pull-right" type="button">New menu</button>
-            <br/>
-            <br/>
+            
             <div class="table-menu <%= id %>">
             </div>
           </div>
