@@ -13,6 +13,13 @@
 	padding-left: 35% !important;
 }
 
+a {
+	img{
+		padding-left:5px;
+		// padding-right:5px;
+	}
+}
+
 .tblForm  {
 	th {
 		background: none repeat scroll 0 0 #f1f1f1;
@@ -28,7 +35,8 @@
 	}
 
 
-	input[type=text], input[type=password], input[type=number] {
+	input[type=text], input[type=password], 
+	input[type=number], input[type=email] {
 		width: 60%;
 	}
 }
@@ -40,119 +48,119 @@ a {
 }
 
 .btn_small_pink, .btn_medium_pink, .btn_large_pink, .btn_small_blue, .btn_medium_blue, .btn_large_blue, .btn_small_grey, .btn_medium_grey, .btn_large_grey {
-    background: url("/assets/btn.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
-    border: 0 none;
-    cursor: pointer;
-    text-align: center;
+	background: url("/assets/btn.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+	border: 0 none;
+	cursor: pointer;
+	text-align: center;
 }
 .btn_small_blue:hover {
-    background-position: -7px -5px;
-    color: #fff;
-    font-weight: bold;
-    height: 27px;
-    width: 91px;
+	background-position: -7px -5px;
+	color: #fff;
+	font-weight: bold;
+	height: 27px;
+	width: 91px;
 }
 .btn_small_blue {
-    background-position: -7px -34px;
-    color: #fff;
-    font-weight: bold;
-    height: 27px;
-    width: 91px;
+	background-position: -7px -34px;
+	color: #fff;
+	font-weight: bold;
+	height: 27px;
+	width: 91px;
 }
 .btn_medium_blue:hover {
-    background-position: -111px -5px;
-    color: #fff;
-    font-weight: bold;
-    height: 27px;
-    width: 150px;
+	background-position: -111px -5px;
+	color: #fff;
+	font-weight: bold;
+	height: 27px;
+	width: 150px;
 }
 .btn_medium_blue {
-    background-position: -111px -34px;
-    color: #fff;
-    font-weight: bold;
-    height: 27px;
-    width: 150px;
+	background-position: -111px -34px;
+	color: #fff;
+	font-weight: bold;
+	height: 27px;
+	width: 150px;
 }
 .btn_large_blue:hover {
-    background-position: -273px -5px;
-    color: #fff;
-    font-weight: bold;
-    height: 27px;
-    width: 250px;
+	background-position: -273px -5px;
+	color: #fff;
+	font-weight: bold;
+	height: 27px;
+	width: 250px;
 }
 .btn_large_blue {
-    background-position: -273px -34px;
-    color: #fff;
-    font-weight: bold;
-    height: 27px;
-    width: 250px;
+	background-position: -273px -34px;
+	color: #fff;
+	font-weight: bold;
+	height: 27px;
+	width: 250px;
 }
 .btn_small_pink:hover {
-    background-position: -7px -115px;
-    color: #fff;
-    font-weight: bold;
-    height: 27px;
-    width: 91px;
+	background-position: -7px -115px;
+	color: #fff;
+	font-weight: bold;
+	height: 27px;
+	width: 91px;
 }
 .btn_small_pink {
-    background-position: -7px -144px;
-    color: #fff;
-    font-weight: bold;
-    height: 27px;
-    width: 91px;
+	background-position: -7px -144px;
+	color: #fff;
+	font-weight: bold;
+	height: 27px;
+	width: 91px;
 }
 .btn_medium_pink:hover {
-    background-position: -111px -115px;
-    color: #fff;
-    font-weight: bold;
-    height: 27px;
-    width: 150px;
+	background-position: -111px -115px;
+	color: #fff;
+	font-weight: bold;
+	height: 27px;
+	width: 150px;
 }
 .btn_medium_pink {
-    background-position: -111px -144px;
-    color: #fff;
-    font-weight: bold;
-    height: 27px;
-    width: 150px;
+	background-position: -111px -144px;
+	color: #fff;
+	font-weight: bold;
+	height: 27px;
+	width: 150px;
 }
 .btn_large_pink:hover {
-    background-position: -273px -115px;
-    color: #fff;
-    font-weight: bold;
-    height: 27px;
-    width: 250px;
+	background-position: -273px -115px;
+	color: #fff;
+	font-weight: bold;
+	height: 27px;
+	width: 250px;
 }
 .btn_large_pink {
-    background-position: -273px -144px;
-    color: #fff;
-    font-weight: bold;
-    height: 27px;
-    width: 250px;
+	background-position: -273px -144px;
+	color: #fff;
+	font-weight: bold;
+	height: 27px;
+	width: 250px;
 }
 .btn_small_grey {
-    background-position: -7px -63px;
-    color: #5d5d5d;
-    font-weight: bold;
-    height: 29px;
-    width: 91px;
+	background-position: -7px -63px;
+	color: #5d5d5d;
+	font-weight: bold;
+	height: 29px;
+	width: 91px;
 }
 .btn_medium_grey {
-    background-position: -111px -63px;
-    color: #5d5d5d;
-    font-weight: bold;
-    height: 29px;
-    width: 150px;
+	background-position: -111px -63px;
+	color: #5d5d5d;
+	font-weight: bold;
+	height: 29px;
+	width: 150px;
 }
 .btn_large_grey {
-    background-position: -273px -63px;
-    color: #5d5d5d;
-    font-weight: bold;
-    height: 29px;
-    width: 250px;
+	background-position: -273px -63px;
+	color: #5d5d5d;
+	font-weight: bold;
+	height: 29px;
+	width: 250px;
 }
 
 .height10 {
-    height: 10px;
+	height: 10px;
 }
 
 .left_pull{
@@ -173,15 +181,15 @@ a {
 
 .content_left  {
 	-moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    border-color: -moz-use-text-color #c5c5c5 #c5c5c5;
-    border-image: none;
-    border-right: 1px solid #c5c5c5;
-    border-style: none solid solid;
-    border-width: medium 1px 1px;
-    width:190px;
+	-moz-border-left-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-top-colors: none;
+	border-color: -moz-use-text-color #c5c5c5 #c5c5c5;
+	border-image: none;
+	border-right: 1px solid #c5c5c5;
+	border-style: none solid solid;
+	border-width: medium 1px 1px;
+	width:190px;
 
 	ul {
 		li {
@@ -199,13 +207,13 @@ a {
 
 
 .left_top {
-    background: url("/assets/menu_left_top_bg.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
-    color: #fff;
-    font-size: 13px;
-    font-weight: bold;
-    height: 30px;
-    line-height: 30px;
-    padding: 0 20px;
+	background: url("/assets/menu_left_top_bg.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+	color: #fff;
+	font-size: 13px;
+	font-weight: bold;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 20px;
 }
 
 .form-control{
@@ -358,12 +366,12 @@ a.imghover:hover img {
 }
 
 .dashscrumb {
-    border: 1px solid #929191;
-    border-radius: 3px;
-    font-weight: bold;
-    margin: 7px 0;
-    position: relative;
-    span {
+	border: 1px solid #929191;
+	border-radius: 3px;
+	font-weight: bold;
+	margin: 7px 0;
+	position: relative;
+	span {
 		padding: 0 10px;
 	}
 }
@@ -380,8 +388,8 @@ p {
 }
 
 .navbar {
-    margin-bottom: 0px !important;
-    min-height: 0px !important;
+	margin-bottom: 0px !important;
+	min-height: 0px !important;
 }
 
 #navbar{

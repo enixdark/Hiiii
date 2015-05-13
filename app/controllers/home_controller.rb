@@ -32,16 +32,16 @@ class HomeController < ApplicationController
 
 	  self.update(pass_params,'home/user/password') do 
 	  	@user = @current_user
-	  	if pass_params[:new_password] != pass_params[:password_confirmation]
-	  	  notice = "password don't match"
-	  	else
+	  	# if pass_params[:new_password] != pass_params[:password_confirmation]
+	  	#   notice = "password don't match"
+	  	# else
 	  	  # byebug
-	  	  @current_user.password = pass_params[:new_password]
+	  	  @current_user.password = pass_params[:password]
 	  	  if @user.valid?
 	  		@user.save
 	  		log_in @user, bypass: true
 	  	  end
-	  	end
+	  	# end
 	  end
 
 	end

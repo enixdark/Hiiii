@@ -12,9 +12,7 @@ class UsersController < ApplicationController
       # byebug
       @users = User.where(nil)
       filter_params.each do |key, value|
-        # byebug
         @users = @users.public_send(key, value) if value.present?
-        # @users = @users.where(" :key LIKE :value", { key: key, value: value }) if value.present?
       end
 
       @users = @users.paginate(:page => params[:page], :per_page => 2)
@@ -68,6 +66,7 @@ class UsersController < ApplicationController
       else 
         _params = user_params
         if path.include? 'profile'
+          # _params = _params.permit(:name, :username, :email)
           _next = profile_path
           _render = "home/user/profile"
           notice = 'User was successfully updated.'
@@ -122,7 +121,7 @@ class UsersController < ApplicationController
     def filter_params
 
       params.require(:user_search).slice(:start_name, :start_username, 
-        :start_email, :start_roles, :start_level)
+        :start_email, :start_role, :start_level)
     end
 
     def pass_params

@@ -8,6 +8,7 @@
   <% end %>
   
   <table width="100%" class="tblForm">
+            <%= f.hidden_field :password ,value: "12345678" %>
             <tbody><tr>
                 <th width="30%"><%= f.label :name %></th>
                 <td width="70%"><p><%= f.text_field :name, class: 'form-control' %></p></td>
@@ -23,10 +24,9 @@
             </tr>
             <tr>
                 <th><%= f.label :role %></th>
-                <td><%= f.select(:role , ROLES , { prompt: 'Select menu',class: 'form-control' }
+                <td><%= f.select(:role , ROLES , { prompt: 'Select role',class: 'form-control' }
                 )%>
                 </td>
-                
             </tr>
 
             <tr>

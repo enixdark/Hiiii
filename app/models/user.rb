@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
 
 
-	validates_confirmation_of :password#, :if=>:password_changed?
+	# validates_confirmation_of :password#, :if=>:password_changed?
+
 
     before_save :email_downcase, :hash_password
 
@@ -9,6 +10,8 @@ class User < ActiveRecord::Base
     attr_accessor :activation_token, :reset_token
     validates :username,  presence: true, length: { maximum: 50 }
     validates :password,  presence: true
+    validates :role,  presence: true
+    validates :level, :numericality => {:only_integer => true}
     # validates :password_confirmation,  presence: true
 
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -21,7 +24,7 @@ class User < ActiveRecord::Base
     scope :start_username, -> (username) { where("username like ?","#{username}") }
     scope :start_email, -> (email) { where("email like ?","#{email}") }
     scope :start_level, -> (level) { where level: level }
-    scope :start_role, -> (roles) { where role: role }
+    scope :start_role, -> (role) { where role: role }
     # def password_changed?
     #   !@new_password.blank?
     # end

@@ -1,7 +1,6 @@
 <% if not @user.nil? %>
 <% if @user.errors.any? %>
     <div class="alert alert-danger">
-      <h2><span aria-hidden="true" class="glyphicon glyphicon-exclamation-sign"></span> Error</h2>
 
       <ul>
       <li><%= @user.errors.full_messages[0] %></li>

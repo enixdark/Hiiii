@@ -1,24 +1,27 @@
-<div class="left_top">Registration</div>
+<div class="left_top">Account</div>
 			<div class="content_left">
 				<ul>
 					<li>
-						<a href="/admin/farmers">List of farmer registrations</a>            </li>
+						<%= link_to 'User profiles', profile_path %> 
 
 						<li>
-							<a href="/admin/suppliers">List of supplier registrations</a>            </li>
+						<%= link_to 'change password', profile_password_path %>
+						</li>
 
 						</ul>
 					</div>
 		    
 		    <div class="height10"></div>
-			<div class="left_top">Registration</div>
+			<div class="left_top">System</div>
 			<div class="content_left">
 				<ul>
 					<li>
-						<a href="/admin/farmers">List of farmer registrations</a>            </li>
+						<%= link_to 'User List', users_index_path %>            
+					</li>
 
-						<li>
-							<a href="/admin/suppliers">List of supplier registrations</a>            </li>
+					<li>
+						<%= link_to 'Menu List', menus_index_path %>
+					</li>
 
 						</ul>
 					</div>
